@@ -8,6 +8,7 @@ export VTROOT=$(pwd)
 export VTTOP=$(pwd)
 export MYSQL_FLAVOR=MySQL56
 export VTDATAROOT=${HOME}/vtdataroot
+export PATH=${VTROOT}/bin:${PATH}
 sudo service apparmor stop; sudo service apparmor teardown; sudo update-rc.d -f apparmor remove
 cd examples/local
 ```
