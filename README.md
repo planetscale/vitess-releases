@@ -12,8 +12,10 @@ cd vitess-releases/bin
 To build and create a release tar.gz:
 
 ```
-git clone https://github.com/planetscale/vitess-releases.git
-cd vitess-releases/bin
+mkdir ~/go/src
+cd ~/go/src
+git clone https://github.com/planetscale/vitess-releases.git github.com/planetscale/vitess-releases
+cd github.com/planetscale/vitess-releases/bin
 ./builder.sh
 ```
 
