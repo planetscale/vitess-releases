@@ -1,4 +1,7 @@
 # vitess-releases
+
+For detailed instructions on how to release software, refer to [this document](vitess-release-instructions.md). 
+
 Vitess releases
 
 To install the latest release:
