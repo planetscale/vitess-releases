@@ -1,6 +1,5 @@
 # vitess-releases
 
-For detailed instructions on how to release software, refer to [this document](vitess-release-instructions.md). 
 
 Vitess releases
 
@@ -12,7 +11,9 @@ cd vitess-releases/bin
 ./install_latest.sh
 ```
 
-To build and create a release tar.gz:
+For detailed instructions on how to create a release, refer to [this document](vitess-release-instructions.md). 
+
+Short instructions create a release tar.gz:
 
 ```
 mkdir ~/go/src
