@@ -28,6 +28,10 @@ if [ $INSTALL_GO -eq 1 ] ; then
     sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
 fi
 
+if ! which go; then
+    export PATH=${PATH}:/usr/local/go/bin
+fi
+
 mkdir -p "$HOME/go"
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin

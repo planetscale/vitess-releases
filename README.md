@@ -20,7 +20,8 @@ cd vitess-releases/bin
 
 The `builder.sh` script is a shell script that can build and package a new
 Vitess release on Ubuntu suitable for upload to github.  It's recommended that
-you run this on a fresh VM to reduce variability.
+you run this on a fresh VM to reduce variability.  See the `vagrant` directory
+in this repo for an example.
 
 This is the quick version of building a new release, suitable for upload to
 github:
@@ -33,9 +34,8 @@ cd vitess-releases/bin
 
 ## More Detailed Release Process Notes
 
-Pull requests to automate this using Vagrant or some other automation that
-creates a fresh Ubuntu VM are welcome, but for now these are the manual steps,
-assuming you already have it:
+You can see the `vagrant` directory for an example of creating an Ubuntu VM, but
+for now these are the manual steps, assuming you already have it:
 
 * Get the latest version of this repo: `git clone
   https://github.com/planetscale/vitess-releases.git`
