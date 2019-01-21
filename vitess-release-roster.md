@@ -10,7 +10,7 @@ If you need access to `planet-build`, please ping Lucy or Adrianna with your pub
 
 #### Process
 
-1. Follow [Vitess release instructions](vitess-release-instructions.md)
+1. Follow [Vitess release instructions](README.md#create-a-new-release)
 2. Post an update in vitess.slack.com's #vitess and #release channel. Follow this [message format](https://vitess.slack.com/archives/C0PQY0PTK/p1547500981410100) so that new Vitess Slack users know what these releases are for.
 3. Update the roster below with the link to your release
 4. Nominate a team member for the following week 
