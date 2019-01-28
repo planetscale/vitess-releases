@@ -22,4 +22,5 @@ If you need access to `planet-build`, please ping Lucy or Adrianna with your pub
 | 12/18/18 | @jvaidya      | [b90b3c0](https://github.com/planetscale/vitess-releases/releases/tag/b90b3c0) |
 | 1/9/19   | @skinnylatte  | [182a942](https://github.com/planetscale/vitess-releases/releases/tag/182a942) |
 | 1/14/19  | @lkburns 	   | [b06cf39](https://github.com/planetscale/vitess-releases/releases/tag/b06cf39) |
-| 1/21/19  | @sverch       |      
+| 1/21/19  | @sverch       | [a88142d](https://github.com/planetscale/vitess-releases/releases/tag/a88142d) |
+| 1/28/19  | @avaidyanatha | [869543a](https://github.com/planetscale/vitess-releases/releases/tag/869543a) |
