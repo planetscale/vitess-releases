@@ -6,7 +6,7 @@ This process makes it easy for the Vitess community to install and run Vitess wi
 
 Every engineering and product team member will participate in this release roster.
 
-If you need access to `planet-build`, please ping Lucy or Adrianna with your public key.
+If you need access to `planet-build`, please reach out to the engineering channel on Slack and someone with access to `planet-build` will get your public key added. 
 
 #### Process
 
@@ -24,3 +24,4 @@ If you need access to `planet-build`, please ping Lucy or Adrianna with your pub
 | 1/14/19  | @lkburns 	   | [b06cf39](https://github.com/planetscale/vitess-releases/releases/tag/b06cf39) |
 | 1/21/19  | @sverch       | [a88142d](https://github.com/planetscale/vitess-releases/releases/tag/a88142d) |
 | 1/28/19  | @avaidyanatha | [869543a](https://github.com/planetscale/vitess-releases/releases/tag/869543a) |
+| 2/5/19   | @eddyg3       | [9094685](https://github.com/planetscale/vitess-releases/releases/tag/9094685) |
