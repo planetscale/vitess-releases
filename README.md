@@ -5,10 +5,10 @@ upload to [github](https://github.com/vitessio/vitess/releases) rather than the
 docker images at
 [https://github.com/vitessio/vitess/tree/master/docker](https://github.com/vitessio/vitess/tree/master/docker).
 
-## Install Latest Vitess Release
+## Install Latest Vitess Release (Linux)
 
 The `install_latest.sh` script is a helper to install the latest release from
-[github](https://github.com/vitessio/vitess/releases):
+[github](https://github.com/vitessio/vitess/releases) on Linux:
 
 ```
 git clone https://github.com/planetscale/vitess-releases.git
