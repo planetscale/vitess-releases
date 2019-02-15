@@ -9,6 +9,11 @@
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
 
+if [[ $OSTYPE != "linux-gnu" ]]; then
+    echo "Non-linux OS detected. Exiting."
+    exit 1
+fi
+
 INSTALL_DIR=${HOME}
 RELEASE_REPO_URL=https://api.github.com/repos/planetscale/vitess-releases/releases/latest
 LATEST_RELEASE_URL=$(curl -s ${RELEASE_REPO_URL} | grep "browser_download_url.*gz" | awk -F'"' '{print $4}')
