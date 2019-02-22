@@ -63,8 +63,8 @@ done
 mkdir -p "${RELEASE_DIR}/web"
 cp -rpf "$HOME/go/src/vitess.io/vitess/web/." "${RELEASE_DIR}/web"
 
-mkdir -p "${RELEASE_DIR}/examples/local"
-cp -rpf "$HOME/go/src/vitess.io/vitess/examples/local/." "${RELEASE_DIR}/examples/local"
+mkdir -p "${RELEASE_DIR}/examples"
+cp -rpf "$HOME/go/src/vitess.io/vitess/examples/." "${RELEASE_DIR}/examples"
 
 cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 
