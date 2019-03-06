@@ -70,3 +70,8 @@ cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 
 cd "${RELEASE_DIR}/.."
 tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
+
+echo ""
+echo "Release Notes"
+echo "${RELEASE_ID}.tar.gz created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
+echo "SHA256: $(sha256sum ~/releases/${RELEASE_ID}.tar.gz | awk {'print $1'})"
