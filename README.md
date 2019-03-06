@@ -66,6 +66,6 @@ github:
 * In a local terminal window, copy the .tar.gz file to your local working folder: `scp planet-build:~/releases/vitess-release-xxxxxxx.tar.gz .`, replacing the file name with the 7-character binary you just built
 * Navigate to the releases view in `vitess-releases` [repo](https://github.com/planetscale/vitess-releases/releases)
 * If you have privileges to release software in this repo, you will see a button named `Draft a new release` in the top right corner of the releases view (If you do not see this, reach out to Adrianna or Lucy)
-* Now, you are ready to [draft a new release](https://github.com/planetscale/vitess-releases/releases/new). Upload the binary from your local working folder. Fill in the details for tag, title, release description.
+* Now, you are ready to [draft a new release](https://github.com/planetscale/vitess-releases/releases/new). Upload the binary from your local working folder. Fill in the details for tag, title, and release description including the sha256 checksum of the tarball.
 * Click publish release
 * This document will be added with additional instructions on best practices on tagging, versioning semantices and release notes.
