@@ -1,6 +1,6 @@
 ### Vitess Release Roster
 
-Every Monday at 12PM PST, a PlanetScale team member takes turns to build and release a Vitess binary.
+Every Wednesday at 12PM PST, a PlanetScale team member takes turns to build and release a Vitess binary.
 
 This process makes it easy for the Vitess community to install and run Vitess without Docker, and without performing a manual build themselves.
 
@@ -11,7 +11,7 @@ If you need access to `planet-build`, please reach out to the engineering channe
 #### Process
 
 1. Follow [Vitess release instructions](vitess-release-instructions.md)
-2. Post an update in vitess.slack.com's #vitess and #release channel. Follow this [message format](https://vitess.slack.com/archives/C0PQY0PTK/p1547500981410100) so that new Vitess Slack users know what these releases are for.
+2. Post an update in the #releases channel in the vitess.slack.com workspace. Follow this [message format](https://vitess.slack.com/archives/C0PQY0PTK/p1547500981410100) so that new Vitess Slack users know what these releases are for.
 3. Update the roster below with the link to your release
 4. Nominate a team member for the following week 
 
@@ -28,4 +28,5 @@ If you need access to `planet-build`, please reach out to the engineering channe
 | 2/20/19  | @gedgar       | [b7e5a98](https://github.com/planetscale/vitess-releases/releases/tag/b7e5a98) |
 | 2/27/19  | @gedgar       | [4e3faef](https://github.com/planetscale/vitess-releases/releases/tag/4e3faef) |
 | 3/06/19  | @gedgar       | [5b135f4](https://github.com/planetscale/vitess-releases/releases/tag/5b135f4) |
-| 3/13/19  | @gedgar       | [4efa9c1](https://github.com/planetscale/vitess-releases/releases/tag/4efa9c1) | 
+| 3/13/19  | @gedgar       | [4efa9c1](https://github.com/planetscale/vitess-releases/releases/tag/4efa9c1) |
+| 3/13/19  | @gedgar       | [ae7b400](https://github.com/planetscale/vitess-releases/releases/tag/ae7b400) |
