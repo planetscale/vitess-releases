@@ -25,7 +25,7 @@ EXPECTED_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -oe "[0-9a-f]\{64\}")
 mkdir -p "${INSTALL_DIR}/downloads"
 cd "${INSTALL_DIR}/downloads" || exit
 curl -OL "${LATEST_RELEASE_URL}"
-if [[ $EXPECTED_CHECKSUM != "$(sha256sum $RELEASE_GZ_FILE | awk {'print $1'})" ]]; then
+if [[ $EXPECTED_CHECKSUM != "$(sha256sum "$RELEASE_GZ_FILE" | awk '{print $1}')" ]]; then
     echo "Checksum mismatch. Exiting."
     exit 1
 fi
