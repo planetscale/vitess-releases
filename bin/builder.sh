@@ -78,7 +78,7 @@ tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
 "${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
 DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
 "${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t rpm
-RPM_FILE="vitess_3.0.0-${SHORT_REV}.x86_64.rpm"
+RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""
 echo "Release Notes"
