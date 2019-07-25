@@ -48,7 +48,8 @@ git pull
 BUILD_TESTS=0 ./bootstrap.sh
 make build
 
-RELEASE_ID=vitess-release-$(git rev-parse --short HEAD)
+SHORT_REV="$(git rev-parse --short HEAD)"
+RELEASE_ID="vitess-release-${SHORT_REV}"
 
 mkdir -p ~/releases
 RELEASE_DIR=${HOME}/releases/${RELEASE_ID}
@@ -74,12 +75,10 @@ cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 cd "${RELEASE_DIR}/.."
 tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
 
-ITERATION="$(git rev-parse --short HEAD)"
-PACKAGE_ROOT="${HOME}/go"
-"${DIR}"/make_package.sh --package "${RELEASE_DIR}" -t deb --deb-no-default-config-files
-DEB_FILE="vitess_3.0.0-${ITERATION}_amd64.deb"
-"${DIR}"/make_package.sh --package "${RELEASE_DIR}" -t rpm
-RPM_FILE="vitess_3.0.0-${ITERATION}.x86_64.rpm"
+"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
+DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
+"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t rpm
+RPM_FILE="vitess_3.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""
 echo "Release Notes"
