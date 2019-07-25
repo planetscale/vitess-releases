@@ -75,9 +75,10 @@ cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 cd "${RELEASE_DIR}/.."
 tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
 
-"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
+cd "${RELEASE_DIR}"
+"${DIR}"/make_package.sh --package "$(dirname "${RELEASE_DIR}")" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
 DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
-"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t rpm
+"${DIR}"/make_package.sh --package "$(dirname "${RELEASE_DIR}")" --iteration "${SHORT_REV}" -t rpm
 RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""

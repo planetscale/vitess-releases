@@ -12,10 +12,10 @@ bin/vtctld=${PREFIX}/bin/vtctld
 bin/vtgate=${PREFIX}/bin/vtgate
 bin/vttablet=${PREFIX}/bin/vttablet
 bin/vtworker=${PREFIX}/bin/vtworker
-src/vitess.io/vitess/config/=/etc/vitess
-src/vitess.io/vitess/web/vtctld2/app=${PREFIX}/lib/vitess/web/vtcld2
-src/vitess.io/vitess/web/vtctld=${PREFIX}/lib/vitess/web
-src/vitess.io/vitess/examples/local/=${PREFIX}/share/vitess/examples
+config/=/etc/vitess
+web/vtctld2/app=${PREFIX}/lib/vitess/web/vtcld2
+web/vtctld=${PREFIX}/lib/vitess/web
+examples/local/=${PREFIX}/share/vitess/examples
 EOF
 
 description='A database clustering system for horizontal scaling of MySQL
