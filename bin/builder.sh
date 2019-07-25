@@ -8,7 +8,10 @@ set -euo pipefail
 
 sudo apt-get -y install make automake \
     libtool libssl-dev g++ git \
-    pkg-config bison curl unzip zip
+    pkg-config bison curl unzip zip \
+    build-essential ruby-dev rubygems rpm
+
+sudo gem install --no-ri --no-rdoc fpm
 
 DIR=$PWD/$(dirname "$0")
 
@@ -45,7 +48,8 @@ git pull
 BUILD_TESTS=0 ./bootstrap.sh
 make build
 
-RELEASE_ID=vitess-release-$(git rev-parse --short HEAD)
+SHORT_REV="$(git rev-parse --short HEAD)"
+RELEASE_ID="vitess-release-${SHORT_REV}"
 
 mkdir -p ~/releases
 RELEASE_DIR=${HOME}/releases/${RELEASE_ID}
@@ -71,7 +75,18 @@ cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 cd "${RELEASE_DIR}/.."
 tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
 
+"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
+DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
+"${DIR}"/make_package.sh -C "${HOME}/go" --iteration "${SHORT_REV}" -t rpm
+RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
+
 echo ""
 echo "Release Notes"
 echo "${RELEASE_ID}.tar.gz created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
 echo "SHA256: $(sha256sum ~/releases/"${RELEASE_ID}".tar.gz | awk '{print $1}')"
+echo ""
+echo "${DEB_FILE} created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
+echo "SHA256: $(sha256sum ~/releases/"${DEB_FILE}" | awk '{print $1}')"
+echo ""
+echo "${RPM_FILE} created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
+echo "SHA256: $(sha256sum ~/releases/"${RPM_FILE}" | awk '{print $1}')"
