@@ -13,7 +13,7 @@ bin/vtgate=${PREFIX}/bin/vtgate
 bin/vttablet=${PREFIX}/bin/vttablet
 bin/vtworker=${PREFIX}/bin/vtworker
 config/=/etc/vitess
-web/vtctld2/app=${PREFIX}/lib/vitess/web/vtcld2
+web/vtctld2=${PREFIX}/lib/vitess/web
 web/vtctld=${PREFIX}/lib/vitess/web
 examples/local/=${PREFIX}/share/vitess/examples
 EOF
