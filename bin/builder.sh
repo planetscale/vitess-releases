@@ -73,18 +73,27 @@ cp -rpf "$HOME/go/src/vitess.io/vitess/examples/." "${RELEASE_DIR}/examples"
 cp "${DIR}/release_README.md" "${RELEASE_DIR}/README.md"
 
 cd "${RELEASE_DIR}/.."
-tar -czf "${RELEASE_ID}.tar.gz" "${RELEASE_ID}"
+TAR_FILE="${RELEASE_ID}.tar.gz"
+tar -czf "${TAR_FILE}" "${RELEASE_ID}"
 
-cd "${RELEASE_DIR}"
-"${DIR}"/make_package.sh --package "$(dirname "${RELEASE_DIR}")" --iteration "${SHORT_REV}" -t deb --deb-no-default-config-files
+"${DIR}"/make_package.sh \
+    -C "${RELEASE_DIR}" \
+    --package "$(dirname "${RELEASE_DIR}")" \
+    --iteration "${SHORT_REV}" \
+    -t deb --deb-no-default-config-files
 DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
-"${DIR}"/make_package.sh --package "$(dirname "${RELEASE_DIR}")" --iteration "${SHORT_REV}" -t rpm
+
+"${DIR}"/make_package.sh \
+    -C "${RELEASE_DIR}" \
+    --package "$(dirname "${RELEASE_DIR}")" \
+    --iteration "${SHORT_REV}" \
+    -t rpm
 RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""
 echo "Release Notes"
-echo "${RELEASE_ID}.tar.gz created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
-echo "SHA256: $(sha256sum ~/releases/"${RELEASE_ID}".tar.gz | awk '{print $1}')"
+echo "${TAR_FILE} created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
+echo "SHA256: $(sha256sum ~/releases/"${TAR_FILE}" | awk '{print $1}')"
 echo ""
 echo "${DEB_FILE} created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
 echo "SHA256: $(sha256sum ~/releases/"${DEB_FILE}" | awk '{print $1}')"
