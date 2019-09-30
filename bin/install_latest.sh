@@ -21,6 +21,8 @@ RELEASE_GZ_FILE=$(echo "${LATEST_RELEASE_URL}" | awk -F'/' '{print $NF}')
 # shellcheck disable=SC2001
 RELEASE_DIR=$(echo "${RELEASE_GZ_FILE}" | sed -e 's,\.tar.gz$,,')
 GZ_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -e "[0-9a-f]\{64\}" | grep ".tar.gz" | awk '{print $2}')
+RPM_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -e "[0-9a-f]\{64\}" | grep ".rpm" | awk '{print $2}')
+DEB_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -e "[0-9a-f]\{64\}" | grep ".deb" | awk '{print $2}')
 
 mkdir -p "${INSTALL_DIR}/downloads"
 cd "${INSTALL_DIR}/downloads" || exit
