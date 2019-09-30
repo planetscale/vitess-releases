@@ -93,7 +93,7 @@ RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
 echo ""
 echo "Release Notes"
 echo "Packages created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
-echo "SHA256 Checksums:
+echo "SHA256 Checksums:"
 echo "${TAR_FILE}: $(sha256sum ~/releases/"${TAR_FILE}" | awk '{print $1}')"
 echo "${DEB_FILE}: $(sha256sum ~/releases/"${DEB_FILE}" | awk '{print $1}')"
 echo "${RPM_FILE}: $(sha256sum ~/releases/"${RPM_FILE}" | awk '{print $1}')"
