@@ -20,7 +20,7 @@ LATEST_RELEASE_URL=$(curl -s ${RELEASE_REPO_URL} | grep "browser_download_url.*g
 RELEASE_GZ_FILE=$(echo "${LATEST_RELEASE_URL}" | awk -F'/' '{print $NF}')
 # shellcheck disable=SC2001
 RELEASE_DIR=$(echo "${RELEASE_GZ_FILE}" | sed -e 's,\.tar.gz$,,')
-EXPECTED_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -oe "[0-9a-f]\{64\}")
+EXPECTED_CHECKSUM=$(curl -s ${RELEASE_REPO_URL} | grep -oe "[0-9a-f]\{64\}" | head -n 1)
 
 mkdir -p "${INSTALL_DIR}/downloads"
 cd "${INSTALL_DIR}/downloads" || exit
