@@ -92,6 +92,7 @@ RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""
 echo "Packages created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
+echo ""
 echo "Package | SHA256"
 echo "------------ | -------------"
 echo "${TAR_FILE} | $(sha256sum ~/releases/"${TAR_FILE}" | awk '{print $1}')"
