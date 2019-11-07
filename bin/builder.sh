@@ -50,7 +50,7 @@ BUILD_TESTS=0 ./bootstrap.sh
 make build
 
 SHORT_REV="$(git rev-parse --short HEAD)"
-RELEASE_ID="vitess-release-${SHORT_REV}"
+RELEASE_ID="vitess-4.0.0-${SHORT_REV}"
 
 mkdir -p ~/releases
 RELEASE_DIR=${HOME}/releases/${RELEASE_ID}
@@ -82,14 +82,14 @@ tar -czf "${TAR_FILE}" "${RELEASE_ID}"
     --package "$(dirname "${RELEASE_DIR}")" \
     --iteration "${SHORT_REV}" \
     -t deb --deb-no-default-config-files
-DEB_FILE="vitess_3.0.0-${SHORT_REV}_amd64.deb"
+DEB_FILE="vitess_4.0.0-${SHORT_REV}_amd64.deb"
 
 "${DIR}"/make_package.sh \
     -C "${RELEASE_DIR}" \
     --package "$(dirname "${RELEASE_DIR}")" \
     --iteration "${SHORT_REV}" \
     -t rpm
-RPM_FILE="vitess-3.0.0-${SHORT_REV}.x86_64.rpm"
+RPM_FILE="vitess-4.0.0-${SHORT_REV}.x86_64.rpm"
 
 echo ""
 echo "Packages created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
