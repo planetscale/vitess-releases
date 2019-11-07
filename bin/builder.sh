@@ -43,6 +43,7 @@ if [ ! -d src/vitess.io/vitess ]; then
 fi
 
 cd src/vitess.io/vitess
+git checkout master
 git pull
 
 BUILD_TESTS=0 ./bootstrap.sh
