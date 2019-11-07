@@ -17,7 +17,7 @@ DIR=$PWD/$(dirname "$0")
 
 INSTALL_GO=0
 if [ -f /usr/local/go/bin/go ]; then
-    if ! /usr/local/go/bin/go version | grep -q go1.11.4; then
+    if ! /usr/local/go/bin/go version | grep -q go1.13.4; then
 	    INSTALL_GO=1
     fi
 else
@@ -27,8 +27,8 @@ fi
 if [ $INSTALL_GO -eq 1 ] ; then
     mkdir -p "$HOME/downloads"
     cd "$HOME/downloads"
-    curl -OL https://dl.google.com/go/go1.11.4.linux-amd64.tar.gz
-    sudo tar -C /usr/local -xzf go1.11.4.linux-amd64.tar.gz
+    curl -OL https://dl.google.com/go/go1.13.4.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go1.13.4.linux-amd64.tar.gz
 fi
 
 mkdir -p "$HOME/go"
