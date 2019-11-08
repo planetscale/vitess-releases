@@ -55,7 +55,7 @@ RELEASE_ID="vitess-4.0.0-${SHORT_REV}"
 mkdir -p ~/releases
 RELEASE_DIR=${HOME}/releases/${RELEASE_ID}
 
-for d in bin lib dist config pkg vthook; do
+for d in bin lib dist config pkg/linux_amd64 vthook; do
     mkdir -p "${RELEASE_DIR}/$d"
     echo cp -Lrpf "$HOME/go/$d/." "${RELEASE_DIR}/$d"
     cp -Lrpf "$HOME/go/$d/." "${RELEASE_DIR}/$d"
