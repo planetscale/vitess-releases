@@ -11,7 +11,7 @@ exec /usr/local/bin/fpm \
     --force \
     --input-type dir \
     --name vitess \
-    --version "3.0.0" \
+    --version "4.0.0" \
     --url "https://vitess.io/" \
     --description "${description}" \
     --license "Apache License - Version 2.0, January 2004" \
