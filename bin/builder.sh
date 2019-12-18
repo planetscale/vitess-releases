@@ -41,8 +41,9 @@ if [ ! -d src/vitess.io/vitess ]; then
 fi
 
 cd src/vitess.io/vitess
+git checkout master
+git pull
 #git checkout remotes/planetscale/$1
 #git pull planetscale $1
-git checkout master
-git pull 
+
 ./tools/make-release-packages.sh
