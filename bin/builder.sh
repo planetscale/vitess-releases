@@ -45,5 +45,4 @@ git checkout master
 git pull
 #git checkout remotes/planetscale/$1
 #git pull planetscale $1
-
 ./tools/make-release-packages.sh
