@@ -60,3 +60,4 @@ If you need access to `planet-build`, please reach out to the engineering channe
 | 1/8/20   | @gedgar       | [e958cf5](https://github.com/planetscale/vitess-releases/releases/tag/e958cf5) |
 | 1/22/20  | @gedgar       | [df54e56](https://github.com/planetscale/vitess-releases/releases/tag/df54e56) |
 | 1/29/20  | @gedgar       | [041757f](https://github.com/planetscale/vitess-releases/releases/tag/041757f) |
+| 2/12/20  | @gedgar       | [220b4c5](https://github.com/planetscale/vitess-releases/releases/tag/220b4c5) |
