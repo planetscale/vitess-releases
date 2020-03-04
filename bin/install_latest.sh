@@ -36,4 +36,4 @@ ln -sf "${INSTALL_DIR}/${RELEASE_DIR}" "${INSTALL_DIR}/vitess"
 echo "Latest release of vitess installed (${INSTALL_DIR}/vitess -> ${INSTALL_DIR}/${RELEASE_DIR})!"
 echo Do the following to take it for a spin:
 echo "cd ${INSTALL_DIR}/vitess"
-echo cat README.md
+echo cat share/vitess/examples/README.md
