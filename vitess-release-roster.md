@@ -1,22 +1,4 @@
 ### Vitess Release Roster
-
-Every Wednesday at 12PM PST, a PlanetScale team member takes turns to build and release a Vitess binary.
-
-This process makes it easy for the Vitess community to install and run Vitess without Docker, and without performing a manual build themselves.
-
-Every engineering and product team member will participate in this release roster.
-
-If you need access to `planet-build`, please reach out to the engineering channel on Slack and someone with access to `planet-build` will get your public key added. 
-
-#### Process
-
-1. Follow [Vitess release instructions](vitess-release-instructions.md)
-2. Post an update in the #releases channel in the vitess.slack.com workspace. Follow this [message format](https://vitess.slack.com/archives/C0PQY0PTK/p1547500981410100) so that new Vitess Slack users know what these releases are for.
-3. Update the roster below with the link to your release
-4. Nominate a team member for the following week 
-
-#### Roster
-
 | Date     | Team Member   | Link to release	|
 | -------- | ------------- | --------------------- |
 | 12/18/18 | @jvaidya      | [b90b3c0](https://github.com/planetscale/vitess-releases/releases/tag/b90b3c0) |
