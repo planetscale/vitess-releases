@@ -3,8 +3,7 @@
 # Vitess Installer Script
 #
 # This script exists to help install a Vitess release as a tar package rather
-# than as a prebuilt Docker image.  The builder.sh script in this directory
-# creates the tar package.
+# than as a prebuilt Docker image.
 
 # http://redsymbol.net/articles/unofficial-bash-strict-mode/
 set -euo pipefail
@@ -36,4 +35,4 @@ ln -sf "${INSTALL_DIR}/${RELEASE_DIR}" "${INSTALL_DIR}/vitess"
 echo "Latest release of vitess installed (${INSTALL_DIR}/vitess -> ${INSTALL_DIR}/${RELEASE_DIR})!"
 echo Do the following to take it for a spin:
 echo "cd ${INSTALL_DIR}/vitess"
-echo cat share/vitess/examples/README.md
+echo cat examples/README.md
