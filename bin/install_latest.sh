@@ -15,7 +15,7 @@ fi
 
 INSTALL_DIR=${HOME}
 RELEASE_REPO_URL=https://api.github.com/repos/planetscale/vitess-releases/releases/latest
-LATEST_RELEASE_URL=$(curl -s ${RELEASE_REPO_URL} | grep "browser_download_url.*gz" | awk -F'"' '{print $4}')
+LATEST_RELEASE_URL=$(curl -s ${RELEASE_REPO_URL} | grep "browser_download_url.*gz" | awk -F'"' '{print $4}' | grep -v darwin)
 RELEASE_GZ_FILE=$(echo "${LATEST_RELEASE_URL}" | awk -F'/' '{print $NF}')
 # shellcheck disable=SC2001
 RELEASE_DIR=$(echo "${RELEASE_GZ_FILE}" | sed -e 's,\.tar.gz$,,')
