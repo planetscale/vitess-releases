@@ -74,3 +74,4 @@
 | 12/16/20 | @gedgar       | [884ab4c](https://github.com/planetscale/vitess-releases/releases/tag/884ab4c) |
 | 12/23/20 | @gedgar       | [8aae5e3](https://github.com/planetscale/vitess-releases/releases/tag/8aae5e3) |
 | 12/30/20 | @gedgar       | [1300808](https://github.com/planetscale/vitess-releases/releases/tag/1300808) |
+| 2/10/21  | @gedgar       | [38c5098](https://github.com/planetscale/vitess-releases/releases/tag/38c5098) |
