@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
-RUN apt-get update -y && apt-get install -y sudo build-essential wget make unzip g++ etcd curl git wget vim ant maven default-jdk
+RUN apt-get update -y && apt-get install -y sudo build-essential wget make unzip g++ etcd curl git wget vim ant maven default-jdk ruby ruby-dev rubygems build-essential
+RUN gem install --no-document fpm
 
 RUN useradd --password "" --create-home  "planetscale"
 RUN adduser planetscale sudo
