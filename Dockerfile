@@ -21,6 +21,7 @@ RUN mkdir -p /home/planetscale/go/src/vitess.io/ && \
     git clone https://github.com/vitessio/vitess.git
 WORKDIR /home/planetscale/go/src/vitess.io/vitess
 RUN git remote add planetscale https://github.com/planetscale/vitess.git && \
-    git fetch planetscale
+    git fetch planetscale && \
+    make tools
 
 CMD ["/bin/bash"]
