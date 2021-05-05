@@ -83,3 +83,4 @@
 | 4/20/21  | @Anders-PlanetScale       | [a246ffa4c](https://github.com/planetscale/vitess-releases/releases/tag/a246ffa4c) |
 | 4/27/21  | @Anders-PlanetScale       | [37c09d3be](https://github.com/planetscale/vitess-releases/releases/tag/37c09d3be) |
 | 5/04/21  | @Anders-PlanetScale       | [e030ea59a](https://github.com/planetscale/vitess-releases/releases/tag/e030ea59a) |
+| 5/05/21  | @Anders-PlanetScale       | [9a06a610b](https://github.com/planetscale/vitess-releases/releases/tag/9a06a610b) |
