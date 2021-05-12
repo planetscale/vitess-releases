@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-RUN apt-get update -y && apt-get install -y sudo build-essential wget make unzip g++ etcd curl git wget vim ant maven default-jdk ruby ruby-dev rubygems build-essential rpm
+RUN apt-get update -y && apt-get install -y sudo build-essential wget make unzip g++ etcd curl git wget vim ant maven default-jdk ruby ruby-dev rubygems build-essential rpm mysql-server mysql-client
 RUN gem install --no-document fpm
 
 RUN useradd --password "" --create-home  "planetscale"
