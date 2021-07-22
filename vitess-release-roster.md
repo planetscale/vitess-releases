@@ -95,4 +95,4 @@
 | 6/29/21  | @Anders-PlanetScale       | [3dcee6547b](https://github.com/planetscale/vitess-releases/releases/tag/3dcee6547b) |
 | 7/07/21  | @gedgar       | [ce773808dc](https://github.com/planetscale/vitess-releases/releases/tag/ce773808dc) |
 | 7/14/21  | @Anders-PlanetScale       | [9fb976ae64](https://github.com/planetscale/vitess-releases/releases/tag/9fb976ae64) |
-
+| 7/22/21  | @gedgar       | [3c210b36ff](https://github.com/planetscale/vitess-releases/releases/tag/3c210b36ff) |
