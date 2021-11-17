@@ -11,7 +11,8 @@ RUN mkdir /home/planetscale && cd /home/planetscale \
     && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
     && cd /home/planetscale/vitess \
     && git remote add planetscale https://github.com/planetscale/vitess.git \
-    && git fetch planetscale
+    && git fetch planetscale && \
+    && chown planetscale:planetscale -R /home/planetscale
 
 # WORKDIR /home/planetscale/vitess
 # RUN git remote add planetscale https://github.com/planetscale/vitess.git
