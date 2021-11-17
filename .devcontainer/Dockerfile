@@ -4,8 +4,6 @@
 ARG VARIANT="hirsute"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-
-
 # Clone and install vitess to run locally
 RUN mkdir /home/planetscale && cd /home/planetscale \
     && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
@@ -13,11 +11,6 @@ RUN mkdir /home/planetscale && cd /home/planetscale \
     && git remote add planetscale https://github.com/planetscale/vitess.git \
     && git fetch planetscale && \
     && chown planetscale:planetscale -R /home/planetscale
-
-# WORKDIR /home/planetscale/vitess
-# RUN git remote add planetscale https://github.com/planetscale/vitess.git
-# RUN git fetch planetscale
-
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -34,5 +27,10 @@ RUN useradd --password "" --create-home  "planetscale" \
     && adduser planetscale sudo \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-# Switch to the planetscale user
-USER planetscale
+# Clone and install vitess to run locally
+RUN mkdir /home/planetscale && cd /home/planetscale \
+    && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
+    && cd /home/planetscale/vitess \
+    && git remote add planetscale https://github.com/planetscale/vitess.git \
+    && git fetch planetscale && \
+    && chown planetscale:planetscale -R /home/planetscale
