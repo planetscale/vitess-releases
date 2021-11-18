@@ -27,5 +27,5 @@ build process, and will be in your starting directory:
 
 At the end of the build script there are instructions to rsync the packages
 to your local machine. Please note with this script the `vitess-release-roster.md`
-will AUTOMATICALLY be updated for you. The only thing left to do here, is to
+will automatically be updated for you. The only thing left to do here, is to
 rsync the packages locally then upload them as a new release in Github. 
