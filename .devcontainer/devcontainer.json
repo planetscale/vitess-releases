@@ -23,9 +23,14 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",
 
+    // Set environment variables needed for Go Tooling
+	"remoteEnv": {"GOROOT":"/usr/local/go", "GOPATH":"/home/planetscale/go", "PATH":"${containerEnv:PATH}:/usr/local/go/bin:/go/bin"},
+
 	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	// "remoteUser": "planetscale",
+	"remoteUser": "planetscale",
 	"features": {
 		"sshd": "latest"
 	}
 }
+
+

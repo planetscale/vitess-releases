@@ -4,17 +4,10 @@
 ARG VARIANT="hirsute"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-# Clone and install vitess to run locally
-RUN mkdir /home/planetscale && cd /home/planetscale \
-    && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
-    && cd /home/planetscale/vitess \
-    && git remote add planetscale https://github.com/planetscale/vitess.git \
-    && git fetch planetscale && \
-    && chown planetscale:planetscale -R /home/planetscale
-
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && RUNLEVEL=1 apt-get -y install --no-install-recommends build-essential unzip g++ etcd ant maven default-jdk ruby ruby-dev rubygems build-essential rpm mysql-server mysql-client \
+    && RUNLEVEL=1 apt-get -y install --no-install-recommends libarchive-tools build-essential unzip g++ etcd ant maven default-jdk ruby ruby-dev rubygems build-essential rpm mysql-server mysql-client \
+    && gem install --no-document fpm \
     && apt-get autoremove -y && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
@@ -23,14 +16,16 @@ RUN bash -c "$(curl -fsSL "https://raw.githubusercontent.com/microsoft/vscode-de
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Create planetscale user to compile code
-RUN useradd --password "" --create-home  "planetscale" \
+RUN useradd --password "" --create-home  "planetscale" -s /bin/bash \
     && adduser planetscale sudo \
+    && chown planetscale:planetscale -R /go \
     && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 # Clone and install vitess to run locally
-RUN mkdir /home/planetscale && cd /home/planetscale \
+RUN cd /home/planetscale \
     && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
     && cd /home/planetscale/vitess \
     && git remote add planetscale https://github.com/planetscale/vitess.git \
-    && git fetch planetscale && \
+    && git fetch planetscale \
     && chown planetscale:planetscale -R /home/planetscale
+
