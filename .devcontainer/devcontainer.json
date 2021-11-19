@@ -30,7 +30,8 @@
 	"remoteUser": "planetscale",
 	"features": {
 		"sshd": "latest"
-	}
+	},
+	"postAttachCommand": "source /workspaces/vitess-releases/prepare-gpg.sh"
 }
 
 
