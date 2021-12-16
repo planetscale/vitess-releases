@@ -114,3 +114,4 @@
 | 11/16/21  | @FancyFane       | [ce61e56939](https://github.com/planetscale/vitess-releases/releases/tag/ce61e56939) |
 | 11/22/2021 | @FancyFane | [d6b22587e0](https://github.com/planetscale/vitess-releases/releases/tag/d6b22587e0) |
 | 11/22/2021 | @FancyFane | [d6b22587e0](https://github.com/planetscale/vitess-releases/releases/tag/d6b22587e0) |
+| 12/16/2021 | @FancyFane | [55e06a2dd1](https://github.com/planetscale/vitess-releases/releases/tag/55e06a2dd1) |
