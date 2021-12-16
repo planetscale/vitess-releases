@@ -113,3 +113,4 @@
 | 11/09/21  | @gedgar       | [131148d3af](https://github.com/planetscale/vitess-releases/releases/tag/131148d3af) |
 | 11/16/21  | @FancyFane       | [ce61e56939](https://github.com/planetscale/vitess-releases/releases/tag/ce61e56939) |
 | 11/30/2021 | @Anders-PlanetScale | [9c86727aaf](https://github.com/planetscale/vitess-releases/releases/tag/9c86727aaf) |
+| 12/16/2021 | @FancyFane | [55e06a2dd1](https://github.com/planetscale/vitess-releases/releases/tag/55e06a2dd1) |
