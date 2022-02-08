@@ -119,4 +119,10 @@
 | 01/05/2022 | @FancyFane | [c5ac83444f](https://github.com/planetscale/vitess-releases/releases/tag/c5ac83444f) |
 | 01/18/2022 | @Anders-PlanetScale | [7244d5b2fa](https://github.com/planetscale/vitess-releases/releases/tag/7244d5b2fa) |
 | 01/18/2022 | @Anders-PlanetScale | [7244d5b2fa](https://github.com/planetscale/vitess-releases/releases/tag/7244d5b2fa) |
+<<<<<<< HEAD
+| 02/08/2022 | @Anders-PlanetScale | [af9ff45217](https://github.com/planetscale/vitess-releases/releases/tag/af9ff45217) |
+=======
+| 01/25/2022 | @FancyFane | [3013b522b4](https://github.com/planetscale/vitess-releases/releases/tag/3013b522b4) |
+>>>>>>> 1619b1966b31ad6220651c42d05566ce2c29b5b1
+
 | 02/08/2022 | @Anders-PlanetScale | [af9ff45217](https://github.com/planetscale/vitess-releases/releases/tag/af9ff45217) |
