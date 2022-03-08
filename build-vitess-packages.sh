@@ -126,29 +126,34 @@ git add vitess-release-roster.md
 git commit -s -m "Updating Roster with build ${SHORT_REV}"
 git push
 
-echo ""
-echo "Packages created as of $(date +"%m-%d-%y") at $(date +"%r %Z")"
-echo ""
-echo "Package | SHA256"
-echo "------------ | -------------"
+
+
+
+
+echo "Generating release notes ...."
+notes="/tmp/release-notes.txt"
+cat > ${notes} << EOF
+
+Packages created as of $(date +"%m-%d-%y") at $(date +"%r %Z")
+
+Package | SHA256
+------------ | -------------
+EOF
+
+# Generate list of files ${RELEASE_FILES} and sha256 values for release notes
+RELEASE_FILES=""
 for file in $(ls ${RELEASE_ROOT} | grep ${SHORT_REV}); do
     if [[ -f ${RELEASE_ROOT}/${file} ]]; then
-        echo "$file | $(sha256sum ${RELEASE_ROOT}/${file} | awk '{print $1}')";
+        RELEASE_FILES="${RELEASE_FILES} ${RELEASE_ROOT}/${file}";
+        echo "${file} | $(sha256sum ${file} | awk '{print $1}')" >> ${notes};
     fi
 done
 
-echo ""
-echo ""
-echo "Files can be found in the ${RELEASE_ROOT} directory."
-echo "Ensure your ssh port 2222 is open in codespaces."
-echo "Download files with rsync"
-echo ""
-printf "rsync -avz -e 'ssh -p 2222' planetscale@localhost:${RELEASE_ROOT}/{"
-for file in $(ls ${RELEASE_ROOT} | grep ${SHORT_REV}); do
-    if [[ -f ${RELEASE_ROOT}/${file} ]]; then
-        printf "${file},"
-    fi
-done | sed 's/,$/\} .\//'
-echo ""
-echo ""
 
+echo "Creating GitHub Release and uploading files..."
+
+gh release create -F /tmp/release-notes.txt -t 'Vitess Release ${VERSION}-${SHORT_REV}' ${SHORT_REV} ${RELEASE_FILES}
+
+echo "All work complete exiting now..."
+
+exit 0
