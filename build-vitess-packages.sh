@@ -116,7 +116,7 @@ fpm \
 
 echo "Now updating vitess-release-roster.md ...."
 cd /workspaces/vitess-releases
-printf "\n| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
+printf "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
 git add vitess-release-roster.md
 git commit -s -m "Updating Roster with build ${SHORT_REV}"
 git push
