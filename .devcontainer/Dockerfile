@@ -23,9 +23,7 @@ RUN useradd --password "" --create-home  "planetscale" -s /bin/bash \
 
 # Clone and install vitess to run locally
 RUN cd /home/planetscale \
-    && git clone https://${GITHUB_TOKEN}:x-oauth-basic@github.com/planetscale/vitess.git \
+    && git clone https://github.com/vitessio/vitess.git \
     && cd /home/planetscale/vitess \
-    && git remote add planetscale https://github.com/planetscale/vitess.git \
-    && git fetch planetscale \
     && chown planetscale:planetscale -R /home/planetscale
 
