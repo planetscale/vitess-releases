@@ -1,0 +1,10 @@
+# Ignore git ignore file
+.gitignore
+
+# Ignore package creation files
+dists/
+packages/
+
+
+# Ignore codespace files
+workspace.code-workspace
