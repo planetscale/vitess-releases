@@ -112,19 +112,13 @@
 | 11/03/21  | @Anders-PlanetScale       | [e7ac923fc3](https://github.com/planetscale/vitess-releases/releases/tag/e7ac923fc3) |
 | 11/09/21  | @gedgar       | [131148d3af](https://github.com/planetscale/vitess-releases/releases/tag/131148d3af) |
 | 11/16/21  | @FancyFane       | [ce61e56939](https://github.com/planetscale/vitess-releases/releases/tag/ce61e56939) |
-| 11/22/2021 | @FancyFane | [d6b22587e0](https://github.com/planetscale/vitess-releases/releases/tag/d6b22587e0) |
 | 11/30/2021 | @Anders-PlanetScale | [9c86727aaf](https://github.com/planetscale/vitess-releases/releases/tag/9c86727aaf) |
 | 12/16/2021 | @FancyFane | [55e06a2dd1](https://github.com/planetscale/vitess-releases/releases/tag/55e06a2dd1) |
 | 01/05/2022 | @FancyFane | [c5ac83444f](https://github.com/planetscale/vitess-releases/releases/tag/c5ac83444f) |
-| 01/05/2022 | @FancyFane | [c5ac83444f](https://github.com/planetscale/vitess-releases/releases/tag/c5ac83444f) |
+| 01/11/2022 | @gedgar | [517f5a51f1](https://github.com/planetscale/vitess-releases/releases/tag/517f5a51f1) |
 | 01/18/2022 | @Anders-PlanetScale | [7244d5b2fa](https://github.com/planetscale/vitess-releases/releases/tag/7244d5b2fa) |
-| 01/18/2022 | @Anders-PlanetScale | [7244d5b2fa](https://github.com/planetscale/vitess-releases/releases/tag/7244d5b2fa) |
-<<<<<<< HEAD
-| 02/08/2022 | @Anders-PlanetScale | [af9ff45217](https://github.com/planetscale/vitess-releases/releases/tag/af9ff45217) |
-=======
 | 01/25/2022 | @FancyFane | [3013b522b4](https://github.com/planetscale/vitess-releases/releases/tag/3013b522b4) |
->>>>>>> 1619b1966b31ad6220651c42d05566ce2c29b5b1
-
 | 02/08/2022 | @Anders-PlanetScale | [af9ff45217](https://github.com/planetscale/vitess-releases/releases/tag/af9ff45217) |
 | 02/15/2022 | @FancyFane | [573a22b7e3](https://github.com/planetscale/vitess-releases/releases/tag/573a22b7e3) |
+| 02/23/2022 | @gedgar | [8f1079efa8](https://github.com/planetscale/vitess-releases/releases/tag/8f1079efa8) |
 | 03/02/2022 | @Anders-PlanetScale | [f259672e90](https://github.com/planetscale/vitess-releases/releases/tag/f259672e90) |
