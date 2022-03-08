@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Prepare GPG key for signing packages
+bash prepare-gpg.sh
+
 # This script builds and packages a Vitess release suitable for creating a new
 # release on https://github.com/vitessio/vitess/releases.
 
@@ -11,6 +14,7 @@ cd /home/planetscale/vitess
 
 # shellcheck disable=SC1091
 source build.env
+
 
 # Pull fresh code
 git pull
