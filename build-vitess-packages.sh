@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Prepare GPG key for signing packages
-bash prepare-gpg.sh
-
 # This script builds and packages a Vitess release suitable for creating a new
 # release on https://github.com/vitessio/vitess/releases.
 
@@ -25,6 +22,14 @@ if [ -n "$*" ]; then
     VERSION="$1"
 else
     VERSION="$(grep -Po '(?<=const versionName = ").*(?=")' ${VTROOT}/go/vt/servenv/version.go | sed 's/-/_/')"
+fi
+
+OLD_REV=$(tail -1 ${CODESPACE_VSCODE_FOLDER}/vitess-release-roster.md | grep -Po '(?<=tag/).*(?=\))')
+
+if [[ ${SHORT_REV} == ${OLD_REV} ]]; then
+    echo "The OLD revision ${OLD_REV} and new revsision match ${SHORT_REV}."
+    echo "No changes made this week closing out utility."
+    exit 1
 fi
 
 RELEASE_ID="vitess-${VERSION}-${SHORT_REV}"
