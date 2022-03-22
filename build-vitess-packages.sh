@@ -156,7 +156,7 @@ cat ${notes}
 
 echo;echo;echo "Creating GitHub Release and uploading files..."
 
-gh release create -F /tmp/release-notes.txt -t 'Vitess Release ${VERSION}-${SHORT_REV}' ${SHORT_REV} ${RELEASE_FILES}
+gh release create -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV} ${RELEASE_FILES}
 
 echo "All work complete exiting now..."
 
