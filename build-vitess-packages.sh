@@ -121,7 +121,7 @@ fpm \
 
 echo "Now updating vitess-release-roster.md ...."
 cd /workspaces/vitess-releases
-printf "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
+echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
 git add vitess-release-roster.md
 git commit -s -m "Updating Roster with build ${SHORT_REV}"
 git push
@@ -145,7 +145,7 @@ RELEASE_FILES=""
 for file in $(ls ${RELEASE_ROOT} | grep ${SHORT_REV}); do
     if [[ -f ${RELEASE_ROOT}/${file} ]]; then
         RELEASE_FILES="${RELEASE_FILES} ${RELEASE_ROOT}/${file}";
-        echo "${file} | $(sha256sum ${file} | awk '{print $1}')" >> ${notes};
+        echo "${file} | $(sha256sum ${RELEASE_ROOT}/${file} | cut -d ' ' -f 1)" >> ${notes};
     fi
 done
 
