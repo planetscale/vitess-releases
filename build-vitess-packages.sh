@@ -26,6 +26,7 @@ fi
 
 OLD_REV=$(tail -1 ${CODESPACE_VSCODE_FOLDER}/vitess-release-roster.md | grep -Po '(?<=tag/).*(?=\))')
 
+# Check to see if there were changes; exit if there are none
 if [[ ${SHORT_REV} == ${OLD_REV} ]]; then
     echo "The OLD revision ${OLD_REV} and new revsision match ${SHORT_REV}."
     echo "No changes made this week closing out utility."
@@ -149,8 +150,11 @@ for file in $(ls ${RELEASE_ROOT} | grep ${SHORT_REV}); do
     fi
 done
 
+# Display notes for troubleshooting purposes
 
-echo "Creating GitHub Release and uploading files..."
+cat ${notes}
+
+echo;echo;echo "Creating GitHub Release and uploading files..."
 
 gh release create -F /tmp/release-notes.txt -t 'Vitess Release ${VERSION}-${SHORT_REV}' ${SHORT_REV} ${RELEASE_FILES}
 
