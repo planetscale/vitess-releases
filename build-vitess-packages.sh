@@ -17,11 +17,14 @@ source build.env
 git pull
 
 # Gather Version Revision Information
+# Need to ensure deb version uses - and not _
 SHORT_REV="$(git rev-parse --short HEAD)"
 if [ -n "$*" ]; then
-    VERSION="$1"
+    VERSION="$($1 | sed 's/-/_/')"
+    DEB_VERSION="$($1 | sed 's/_/-/')"
 else
     VERSION="$(grep -Po '(?<=const versionName = ").*(?=")' ${VTROOT}/go/vt/servenv/version.go | sed 's/-/_/')"
+    DEB_VERSION="$(grep -Po '(?<=const versionName = ").*(?=")' ${VTROOT}/go/vt/servenv/version.go)"
 fi
 
 OLD_REV=$(tail -1 ${CODESPACE_VSCODE_FOLDER}/vitess-release-roster.md | grep -Po '(?<=tag/).*(?=\))')
@@ -91,7 +94,7 @@ fpm \
    --force \
    --input-type dir \
    --name vitess \
-   --version "${VERSION}" \
+   --version "${DEB_VERSION}" \
    --url "https://vitess.io/" \
    --description "${DESCRIPTION}" \
    --license "Apache License - Version 2.0, January 2004" \
@@ -126,9 +129,6 @@ echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planet
 git add vitess-release-roster.md
 git commit -s -m "Updating Roster with build ${SHORT_REV}"
 git push
-
-
-
 
 
 echo "Generating release notes ...."
