@@ -132,3 +132,4 @@
 | 05/03/2022 | @FancyFane | [d5ab571240](https://github.com/planetscale/vitess-releases/releases/tag/d5ab571240) |
 | 05/12/2022 | @FancyFane | [0503be2777](https://github.com/planetscale/vitess-releases/releases/tag/0503be2777) |
 | 05/20/2022 | @FancyFane | [6e028c0030](https://github.com/planetscale/vitess-releases/releases/tag/6e028c0030) |
+| 05/25/2022 | @FancyFane | [7c7eeecee7](https://github.com/planetscale/vitess-releases/releases/tag/7c7eeecee7) |
