@@ -73,7 +73,7 @@ echo "Building Vitess for Apple amd64..."
 GOOS=darwin GOARCH=amd64 make cross-build 2>/dev/null
 
 echo "Copying files into staging directory ${RELEASE_DIR}..."
-for binary in vttestserver mysqlctl mysqlctld query_analyzer topo2topo vtaclcheck vtbackup vtbench vtclient vtcombo vtctl vtctldclient vtctlclient vtctld vtexplain vtgate vttablet vtorc vtworker vtworkerclient zk zkctl zkctld; do
+for binary in vttestserver mysqlctl mysqlctld query_analyzer topo2topo vtaclcheck vtbackup vtbench vtclient vtcombo vtctl vtctldclient vtctlclient vtctld vtexplain vtgate vttablet vtorc zk zkctl zkctld; do
  cp -a "${VTROOT}/bin/$binary" "${RELEASE_DIR}/bin/"
 done;
 cp -a ${VTROOT}/examples ${DOC_DIR}
