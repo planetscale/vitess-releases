@@ -8,8 +8,8 @@ RUN adduser planetscale sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 RUN cd /tmp && \
-    wget https://dl.google.com/go/go1.17.linux-amd64.tar.gz && \
-    tar -xvf go1.17.linux-amd64.tar.gz && \
+    wget https://go.dev/dl/go1.18.4.linux-amd64.tar.gz && \
+    tar -xvf go1.18.4.linux-amd64.tar.gz && \
     mv go /usr/local
 
 USER planetscale
