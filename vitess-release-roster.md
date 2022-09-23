@@ -143,3 +143,4 @@
 | 08/10/2022 | @gedgar | [a51939ed34](https://github.com/planetscale/vitess-releases/releases/tag/a51939ed34) |
 | 08/25/2022 | @Anders-PlanetScale | [604547f636](https://github.com/planetscale/vitess-releases/releases/tag/604547f636) |
 | 09/09/2022 | @Anders-PlanetScale | [1487772f3d](https://github.com/planetscale/vitess-releases/releases/tag/1487772f3d) |
+| 09/23/2022 | @maxenglander | [ce558fc4aa](https://github.com/planetscale/vitess-releases/releases/tag/ce558fc4aa) |
