@@ -12,7 +12,6 @@ cd /home/planetscale/vitess
 # shellcheck disable=SC1091
 source build.env
 
-
 # Pull fresh code
 git pull
 
@@ -66,16 +65,18 @@ make tools >/dev/null
 echo "Building Vitess..."
 make build >/dev/null
 
-# Cross compiler has problems if vttablet file is not in place and empty
-echo "" > ${HOME}/go/bin/darwin_amd64/vttablet
-
-echo "Building Vitess for Apple amd64..."
-GOOS=darwin GOARCH=amd64 make cross-build 2>/dev/null
-
 echo "Copying files into staging directory ${RELEASE_DIR}..."
 for binary in vttestserver mysqlctl mysqlctld query_analyzer topo2topo vtaclcheck vtbackup vtbench vtclient vtcombo vtctl vtctldclient vtctlclient vtctld vtexplain vtgate vttablet vtorc zk zkctl zkctld; do
  cp -a "${VTROOT}/bin/$binary" "${RELEASE_DIR}/bin/"
 done;
+
+echo "Building Vitess for Apple amd64..."
+GOOS=darwin GOARCH=amd64 make cross-build >/dev/null
+
+for binary in vttestserver mysqlctl mysqlctld query_analyzer topo2topo vtaclcheck vtbackup vtbench vtclient vtcombo vtctl vtctldclient vtctlclient vtctld vtexplain vtgate vttablet vtorc zk zkctl zkctld; do
+ cp -a "${VTROOT}/bin/darwin_amd64/$binary" "${APPLE_BIN}/"
+done;
+
 cp -a ${VTROOT}/examples ${DOC_DIR}
 echo "Follow the installation instructions at: https://vitess.io/docs/get-started/local/" > "${DOC_DIR}"/examples/README.md
 
