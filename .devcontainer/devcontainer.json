@@ -32,7 +32,5 @@
 		"sshd": "latest",
 		"github-cli": "latest"
 	},
-	"postAttachCommand": "source /workspaces/vitess-releases/prepare-gpg.sh"
+	"postAttachCommand": ". ./prepare-gpg.sh"
 }
-
-
