@@ -60,7 +60,7 @@ extends many important MySQL features with the scalability of a NoSQL database."
 RELEASE_ROOT="${HOME}/releases"
 RELEASE_DIR="${RELEASE_ROOT}/${RELEASE_ID}"
 DOC_DIR="${RELEASE_DIR}/share/vitess/"
-APPLE_BIN="/go/bin/darwin_amd64"
+APPLE_BIN="${VTROOT}/bin/darwin_amd64"
 
 # Create directories to hold our files
 mkdir -p ${RELEASE_DIR}/bin
@@ -84,10 +84,6 @@ done;
 
 echo "Building Vitess for Apple amd64..."
 GOOS=darwin GOARCH=amd64 make cross-build >/dev/null
-
-for binary in vttestserver mysqlctl mysqlctld query_analyzer topo2topo vtaclcheck vtbackup vtbench vtclient vtcombo vtctl vtctldclient vtctlclient vtctld vtexplain vtgate vttablet vtorc zk zkctl zkctld; do
-  cp -a "${VTROOT}/bin/darwin_amd64/$binary" "${APPLE_BIN}/"
-done;
 
 cp -a ${VTROOT}/examples ${DOC_DIR}
 echo "Follow the installation instructions at: https://vitess.io/docs/get-started/local/" > "${DOC_DIR}"/examples/README.md
