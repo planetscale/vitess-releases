@@ -18,6 +18,11 @@ while [ $# -gt 0 ]; do
   shift
 done
 
+# Portable-ish way to get the dir where this script resides.
+# https://stackoverflow.com/a/246128/20045653
+VITESS_RELEASES_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+VITESS_ROSTER_PATH=$VITESS_RELEASES_DIR/vitess-release-roster.md
+
 # Move into the Vitess Directory
 cd /home/planetscale/vitess
 
@@ -38,7 +43,7 @@ else
   DEB_VERSION="$(grep -Po '(?<=const versionName = ").*(?=")' ${VTROOT}/go/vt/servenv/version.go)"
 fi
 
-OLD_REV=$(tail -1 ${CODESPACE_VSCODE_FOLDER}/vitess-release-roster.md | grep -Po '(?<=tag/).*(?=\))')
+OLD_REV=$(tail -1 $VITESS_ROSTER_PATH | grep -Po '(?<=tag/).*(?=\))')
 
 # Check to see if there were changes; exit if there are none
 if [[ ${SHORT_REV} == ${OLD_REV} ]]; then
@@ -134,8 +139,8 @@ fpm \
 
 if [ $DRY_RUN -eq 0 ]; then
   echo "Now updating vitess-release-roster.md ...."
-  cd /workspaces/vitess-releases
-  echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
+  cd $VITESS_RELEASES_DIR
+  echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> $VITESS_ROSTER_PATH
 
   echo "Adding, committing, pushing updated roster..."
   git add vitess-release-roster.md
