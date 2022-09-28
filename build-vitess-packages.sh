@@ -136,16 +136,17 @@ fpm \
   -t rpm
 
 
-echo "Now updating vitess-release-roster.md ...."
-cd /workspaces/vitess-releases
-echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
 if [ $DRY_RUN -eq 0 ]; then
-  echo "Adding, committing, pushing files..."
+  echo "Now updating vitess-release-roster.md ...."
+  cd /workspaces/vitess-releases
+  echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> vitess-release-roster.md
+
+  echo "Adding, committing, pushing updated roster..."
   git add vitess-release-roster.md
   git commit -s -m "Updating Roster with build ${SHORT_REV}"
   git push
 else
-  echo "[dry-run] Adding, committing, pushing files..."
+  echo "[dry-run] Skipping roster update."
 fi
 
 
@@ -178,7 +179,7 @@ if [ $DRY_RUN -eq 0 ]; then
   echo "Creating GitHub Release and uploading files..."
   gh release create -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV} ${RELEASE_FILES}
 else
-  echo "[dry-run] Creating GitHub Release and uploading files..."
+  echo "[dry-run] Skipping GitHub Release and uploading files."
 fi
 
 echo "All work complete exiting now..."
