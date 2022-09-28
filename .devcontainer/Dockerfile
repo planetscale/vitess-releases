@@ -12,8 +12,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
 
 # Install GoLang (features does not install this properly so manual install needed)
-RUN bash -c "$(curl -fsSL "https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/go-debian.sh")" \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+#RUN bash -c "$(curl -fsSL "https://raw.githubusercontent.com/microsoft/vscode-dev-containers/main/script-library/go-debian.sh")" \
+#    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 # Create planetscale user to compile code
 RUN useradd --password "" --create-home  "planetscale" -s /bin/bash \
@@ -26,4 +26,3 @@ RUN cd /home/planetscale \
     && git clone https://github.com/vitessio/vitess.git \
     && cd /home/planetscale/vitess \
     && chown planetscale:planetscale -R /home/planetscale
-
