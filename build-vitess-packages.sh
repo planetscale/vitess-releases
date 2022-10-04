@@ -61,6 +61,10 @@ clusters of MySQL instances. It's architected to run as effectively in a public
 or private cloud architecture as it does on dedicated hardware. It combines and
 extends many important MySQL features with the scalability of a NoSQL database."
 
+# Authentication
+GITHUB_TOKEN="${GITHUB_TOKEN:-""}"
+GITHUB_USER="${GITHUB_USER:-"x"}"
+
 # Define Paths
 RELEASE_ROOT="${HOME}/releases"
 RELEASE_DIR="${RELEASE_ROOT}/${RELEASE_ID}"
