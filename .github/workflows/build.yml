@@ -16,4 +16,7 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.2
         with:
+          env: |
+            GH_TOKEN=unused
+            GITHUB_TOKEN=unused
           runCmd: ./build-vitess-packages.sh --dry-run --no-check-changes
