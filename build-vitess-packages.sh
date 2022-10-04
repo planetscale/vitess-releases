@@ -65,6 +65,7 @@ extends many important MySQL features with the scalability of a NoSQL database."
 GITHUB_ACTOR="${GITHUB_ACTOR:-""}"
 GITHUB_TOKEN="${GITHUB_TOKEN:-""}"
 GITHUB_USER="${GITHUB_USER:-""}"
+GH_TOKEN="${GH_TOKEN:-""}"
 
 # Define Paths
 RELEASE_ROOT="${HOME}/releases"

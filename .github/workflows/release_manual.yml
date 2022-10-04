@@ -13,5 +13,6 @@ jobs:
         uses: devcontainers/ci@v0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           runCmd: ./build-vitess-packages.sh
