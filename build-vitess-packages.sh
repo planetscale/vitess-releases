@@ -62,10 +62,15 @@ or private cloud architecture as it does on dedicated hardware. It combines and
 extends many important MySQL features with the scalability of a NoSQL database."
 
 # Authentication
+GH_TOKEN="${GH_TOKEN:-""}"
 GITHUB_ACTOR="${GITHUB_ACTOR:-""}"
 GITHUB_TOKEN="${GITHUB_TOKEN:-""}"
 GITHUB_USER="${GITHUB_USER:-""}"
-GH_TOKEN="${GH_TOKEN:-""}"
+
+if [ -z "$GH_TOKEN" ] && [ -z "$GITHUB_TOKEN" ]; then
+  echo "Neither \$GH_TOKEN nor \$GITHUB_TOKEN are set."
+  exit 1
+fi
 
 # Define Paths
 RELEASE_ROOT="${HOME}/releases"

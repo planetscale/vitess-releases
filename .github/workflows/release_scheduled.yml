@@ -1,5 +1,10 @@
-name: release_manual
-on: workflow_dispatch
+name: release_scheduled
+on:
+  schedule:
+    # Runs on the 1st and 3rd Tuesday of the month, at 1500 UTC.
+    #
+    # See: https://crontab.guru/#0_15_1-7,15-21_*_2
+    - cron: '0 15 1-7,15-21 * 2'
 
 jobs:
   build:
