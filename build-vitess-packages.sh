@@ -62,8 +62,9 @@ or private cloud architecture as it does on dedicated hardware. It combines and
 extends many important MySQL features with the scalability of a NoSQL database."
 
 # Authentication
+GITHUB_ACTOR="${GITHUB_ACTOR:-""}"
 GITHUB_TOKEN="${GITHUB_TOKEN:-""}"
-GITHUB_USER="${GITHUB_USER:-"x"}"
+GITHUB_USER="${GITHUB_USER:-""}"
 
 # Define Paths
 RELEASE_ROOT="${HOME}/releases"
@@ -143,8 +144,12 @@ fpm \
 
 if [ $DRY_RUN -eq 0 ]; then
   echo "Now updating vitess-release-roster.md ...."
+  user="$GITHUB_USER"
+  if [ -z "$user" ]; then
+    user="$GITHUB_ACTOR"
+  fi
   cd $VITESS_RELEASES_DIR
-  echo "| $(date +%x) | @${GITHUB_USER} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> $VITESS_ROSTER_PATH
+  echo "| $(date +%x) | @${user} | [${SHORT_REV}](https://github.com/planetscale/vitess-releases/releases/tag/${SHORT_REV}) |" >> $VITESS_ROSTER_PATH
 
   echo "Adding, committing, pushing updated roster..."
   git add vitess-release-roster.md
