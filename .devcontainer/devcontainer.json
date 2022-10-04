@@ -1,38 +1,37 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.203.0/containers/ubuntu
 {
-	"name": "Ubuntu",
-	"runArgs": ["--init"],
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
-		// Use hirsute or bionic on local arm64/Apple Silicon.
-		"args": { "VARIANT": "focal" }
-	},
-
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [],
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-
-    // Set environment variables needed for Go Tooling
-	"remoteEnv": {"GOROOT":"/usr/local/go", "GOPATH":"/home/planetscale/go", "PATH":"${containerEnv:PATH}:/usr/local/go/bin:/go/bin"},
-
-	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "planetscale",
-	"features": {
-		"sshd": "latest",
-		"github-cli": "latest"
-	},
-	"postAttachCommand": "source /workspaces/vitess-releases/prepare-gpg.sh"
+  "name": "Ubuntu",
+  "runArgs": ["--init"],
+  "build": {
+    "dockerfile": "Dockerfile",
+    // Update 'VARIANT' to pick an Ubuntu version: hirsute, focal, bionic
+    // Use hirsute or bionic on local arm64/Apple Silicon.
+    "args": {
+      "VARIANT": "focal"
+    }
+  },
+  // Set *default* container specific settings.json values on container create.
+  "settings": {},
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [],
+  "remoteEnv": {
+    "GOROOT":"/usr/local/go",
+    "GOPATH":"/home/planetscale/go",
+    "PATH":"${containerEnv:PATH}:/usr/local/go/bin:/go/bin"
+  },
+  // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "planetscale",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
+  "postAttachCommand": ". ./prepare-gpg.sh"
 }
-
-
