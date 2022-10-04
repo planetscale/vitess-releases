@@ -7,12 +7,16 @@
 set -euo pipefail
 
 DRY_RUN=${DRY_RUN:-0}
+NO_CHECK_CHANGES=${NO_CHECK_CHANGES:-0}
 
 while [ $# -gt 0 ]; do
   arg=$1
   case $arg in
     --dry-run)
       DRY_RUN=1
+      ;;
+    --no-check-changes)
+      NO_CHECK_CHANGES=1
       ;;
   esac
   shift
@@ -47,9 +51,13 @@ OLD_REV=$(tail -1 $VITESS_ROSTER_PATH | grep -Po '(?<=tag/).*(?=\))')
 
 # Check to see if there were changes; exit if there are none
 if [[ ${SHORT_REV} == ${OLD_REV} ]]; then
-  echo "The OLD revision ${OLD_REV} and new revision match ${SHORT_REV}."
-  echo "No changes made this week closing out utility."
-  exit 1
+  if [ ${NO_CHECK_CHANGES} -eq 1 ]; then
+    echo "No changes made this week, but proceeding anyway."
+  else
+    echo "The OLD revision ${OLD_REV} and new revision match ${SHORT_REV}."
+    echo "No changes made this week closing out utility."
+    exit 1
+  fi
 fi
 
 RELEASE_ID="vitess-${VERSION}-${SHORT_REV}"

@@ -16,4 +16,4 @@ jobs:
       - name: Build and run dev container task
         uses: devcontainers/ci@v0.2
         with:
-          runCmd: ./build-vitess-packages.sh --dry-run
+          runCmd: ./build-vitess-packages.sh --dry-run --no-check-changes
