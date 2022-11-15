@@ -200,8 +200,20 @@ cat ${notes}
 echo;echo
 
 if [ $DRY_RUN -eq 0 ]; then
-  echo "Creating GitHub Release and uploading files..."
-  gh release create -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV} ${RELEASE_FILES}
+  echo "Creating GitHub Release..."
+  gh release create -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV}
+  for file in ${RELEASE_FILES}; do
+    attempts=0
+    while [ $attempts -lt 3 ]; do
+      echo "Attaching file $file to release, attempt #${attempts}..."
+      if gh release upload --clobber "${SHORT_REV}" "$file"; then
+        echo "Successfully attached file $file to GitHub Release."
+        break
+      fi
+      attempts=$(expr $attempts + 1)
+    done
+  done
+  echo "Successfully created GitHub Release."
 else
   echo "[dry-run] Skipping GitHub Release and uploading files."
 fi
