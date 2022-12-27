@@ -201,7 +201,7 @@ echo;echo
 
 if [ $DRY_RUN -eq 0 ]; then
   echo "Creating GitHub Release..."
-  gh release create -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV}
+  gh release create -R planetscale/vitess-releases -F /tmp/release-notes.txt -t "Vitess Release ${VERSION}-${SHORT_REV}" ${SHORT_REV}
   for file in ${RELEASE_FILES}; do
     attempts=0
     while [ $attempts -lt 3 ]; do
