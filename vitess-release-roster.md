@@ -180,3 +180,4 @@
 | 04/25/23 | @maxenglander | [edb702b039](https://github.com/planetscale/vitess-releases/releases/tag/edb702b039) |
 | 05/02/23 | @maxenglander | [c5dced7f45](https://github.com/planetscale/vitess-releases/releases/tag/c5dced7f45) |
 | 05/09/23 | @maxenglander | [8e8b572f10](https://github.com/planetscale/vitess-releases/releases/tag/8e8b572f10) |
+| 05/23/23 | @maxenglander | [04c486213f](https://github.com/planetscale/vitess-releases/releases/tag/04c486213f) |
